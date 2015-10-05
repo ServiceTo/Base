@@ -1,5 +1,5 @@
 # Base
-Library to convert decimals to base62 strings, useful for shortURLs based on ID numbers in a database.
+Library to convert integers to base62 strings, useful for shortURLs based on ID numbers in a database.
 
 ## Usage
 ### Install using composer...
@@ -9,7 +9,7 @@ Library to convert decimals to base62 strings, useful for shortURLs based on ID 
 	Route::get('{shortcode}', function ($shortcode) {
 		$base = new ServiceTo\Base();
 		$article = new App\Article();
-		return View::make("content")->withArticle($article->find($base->base2dec($shortcode)));
+		return View::make("content")->withArticle($article->find($base->base2int($shortcode)));
 	});
 
 ### In plain old PHP
@@ -24,5 +24,5 @@ Library to convert decimals to base62 strings, useful for shortURLs based on ID 
 		$stmt->bindValue(1, $url, PDO::PARAM_STR);
 		$stmt->execute();
 
-		return($myshortdomain . $base->dec2base($stmt->lastInsertId()));
+		return($myshortdomain . $base->int2base($stmt->lastInsertId()));
 	}

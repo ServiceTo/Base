@@ -1,7 +1,7 @@
 {
 	"name": "service-to/base",
 	"type": "library",
-	"description": "Library to convert decimals to base62 strings, useful for shortURLs based on ID numbers in a database.",
+	"description": "Library to convert integers to base62 strings, useful for shortURLs based on ID numbers in a database.",
 	"keywords": ["base62"],
 	"homepage": "https://github.com/ServiceTo/Base",
 	"license": "MIT",
