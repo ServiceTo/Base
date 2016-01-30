@@ -8,8 +8,7 @@ Library to convert integers to base62 strings, useful for shortURLs based on ID 
 ### In a Laravel Controller
 	Route::get('{shortcode}', function ($shortcode) {
 		$base = new ServiceTo\Base();
-		$article = new App\Article();
-		return View::make("content")->withArticle($article->find($base->base2int($shortcode)));
+		return View::make("content")->withArticle(App\Article::find($base->base2int($shortcode)));
 	});
 
 ### In plain old PHP
